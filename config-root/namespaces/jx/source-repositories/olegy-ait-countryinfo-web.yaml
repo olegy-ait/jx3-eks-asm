@@ -1,0 +1,22 @@
+apiVersion: jenkins.io/v1
+kind: SourceRepository
+metadata:
+  creationTimestamp: null
+  labels:
+    owner: olegy-ait
+    provider: github
+    repository: countryinfo-web
+    gitops.jenkins-x.io/pipeline: 'namespaces'
+  name: olegy-ait-countryinfo-web
+  namespace: jx
+spec:
+  httpCloneURL: https://github.com/olegy-ait/countryinfo-web.git
+  org: olegy-ait
+  provider: https://github.com
+  providerKind: github
+  providerName: github
+  repo: countryinfo-web
+  scheduler:
+    kind: ""
+    name: in-repo
+  url: https://github.com/olegy-ait/countryinfo-web
