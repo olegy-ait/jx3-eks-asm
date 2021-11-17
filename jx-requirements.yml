@@ -13,7 +13,7 @@ spec:
     gitKind: github
     gitName: github
     gitServer: https://github.com
-    project: 315903692558
+    project: "315903692558"
     provider: eks
     region: us-east-1
   environments:
