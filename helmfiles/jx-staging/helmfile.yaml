@@ -1,0 +1,11 @@
+filepath: ""
+namespace: jx-staging
+repositories:
+- name: dev
+  url: http://chartmuseum-jx.34.234.159.240.nip.io
+releases:
+- chart: dev/countryinfo-web
+  version: 0.0.4
+  name: countryinfo-web
+templates: {}
+renderedvalues: {}
