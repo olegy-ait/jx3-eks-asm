@@ -198,3 +198,17 @@
     repositoryUrl: https://cdfoundation.github.io/tekton-helm-chart
     resourcePath: config-root/namespaces/tekton-pipelines/tekton-pipeline
     version: 0.27.2
+- namespace: jx-staging
+  path: helmfiles/jx-staging/helmfile.yaml
+  releases:
+  - apiVersion: v1
+    appVersion: 0.0.4
+    description: A Helm chart for Kubernetes
+    firstDeployed: "2021-11-17T18:45:02Z"
+    icon: https://raw.githubusercontent.com/cdfoundation/artwork/master/jenkinsx/icon/color/jenkinsx-icon-color.png
+    lastDeployed: "2021-11-17T18:45:02Z"
+    name: countryinfo-web
+    repositoryName: dev
+    repositoryUrl: http://chartmuseum-jx.34.234.159.240.nip.io
+    resourcePath: config-root/namespaces/jx-staging/countryinfo-web
+    version: 0.0.4
