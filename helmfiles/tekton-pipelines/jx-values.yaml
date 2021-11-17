@@ -28,7 +28,7 @@ jxRequirements:
     gitKind: github
     gitName: github
     gitServer: https://github.com
-    project: 315903692558
+    project: cluster-nov-17
     provider: eks
     region: us-east-1
   environments:
