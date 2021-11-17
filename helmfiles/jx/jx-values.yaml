@@ -20,18 +20,21 @@ jxRequirements:
     enabled: false
     schedule: ""
   cluster:
+    chartRepository: http://jenkins-x-chartmuseum.jx.svc.cluster.local:8080
+    clusterName: cluster-nov-17
     devEnvApprovers:
     - todo
     environmentGitOwner: todo
     gitKind: github
     gitName: github
     gitServer: https://github.com
+    project: cluster-nov-17
     provider: eks
     region: us-east-1
-    project: "cluster-nov-17"
-    clusterName: "cluster-nov-17"
   environments:
   - key: dev
+    owner: olegy-ait
+    repository: jx3-eks-asm
   - key: staging
   - key: production
   ingress:
@@ -42,6 +45,8 @@ jxRequirements:
       email: ""
       enabled: false
       production: false
+  pipelineUser:
+    username: olegy-ait
   repository: nexus
   secretStorage: secretsManager
   vault: {}
@@ -51,7 +56,7 @@ jxRequirementsIngressExternalDNS:
 jxRequirementsIngressTLS:
   enabled: false
 jxRequirementsKuberhealthy:
-  enabled: true
+  enabled: false
 jxRequirementsTLSCheck:
   enabled: false
 jxRequirementsVault:
