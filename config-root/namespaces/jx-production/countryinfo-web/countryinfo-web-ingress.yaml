@@ -1,0 +1,22 @@
+# Source: countryinfo-web/templates/ingress.yaml
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    meta.helm.sh/release-name: 'countryinfo-web'
+  name: countryinfo-web
+  namespace: jx-production
+  labels:
+    gitops.jenkins-x.io/pipeline: 'namespaces'
+spec:
+  rules:
+    - http:
+        paths:
+          - pathType: ImplementationSpecific
+            backend:
+              service:
+                name: countryinfo-web
+                port:
+                  number: 80
+      host: countryinfo-web-jx-production.34.234.159.240.nip.io

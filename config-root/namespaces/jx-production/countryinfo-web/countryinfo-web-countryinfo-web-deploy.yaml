@@ -1,0 +1,60 @@
+# Source: countryinfo-web/templates/deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: countryinfo-web-countryinfo-web
+  labels:
+    draft: draft-app
+    chart: "countryinfo-web-0.0.4"
+    gitops.jenkins-x.io/pipeline: 'namespaces'
+  annotations:
+    meta.helm.sh/release-name: 'countryinfo-web'
+    wave.pusher.com/update-on-config-change: 'true'
+  namespace: jx-production
+spec:
+  selector:
+    matchLabels:
+      app: countryinfo-web-countryinfo-web
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        draft: draft-app
+        app: countryinfo-web-countryinfo-web
+    spec:
+      serviceAccountName: countryinfo-web-countryinfo-web
+      containers:
+        - name: countryinfo-web
+          image: "315903692558.dkr.ecr.us-east-1.amazonaws.com/olegy-ait/countryinfo-web:0.0.4"
+          imagePullPolicy: IfNotPresent
+          env:
+            - name: VERSION
+              value: 0.0.4
+          envFrom: null
+          ports:
+            - name: http
+              containerPort: 80
+          livenessProbe:
+            httpGet:
+              path: /
+              port: 80
+            initialDelaySeconds: 60
+            periodSeconds: 10
+            successThreshold: 1
+            timeoutSeconds: 1
+          readinessProbe:
+            httpGet:
+              path: /
+              port: 80
+            periodSeconds: 10
+            successThreshold: 1
+            timeoutSeconds: 1
+          resources:
+            limits:
+              cpu: 400m
+              memory: 256Mi
+            requests:
+              cpu: 200m
+              memory: 128Mi
+      terminationGracePeriodSeconds:
+      imagePullSecrets:
