@@ -27,6 +27,9 @@ jxRequirements:
     gitName: github
     gitServer: https://github.com
     provider: eks
+    region: us-east-1
+    project: "cluster-nov-17"
+    clusterName: "cluster-nov-17"
   environments:
   - key: dev
   - key: staging
