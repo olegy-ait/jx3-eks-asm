@@ -23,6 +23,6 @@ metadata:
     app.kubernetes.io/part-of: tekton-pipelines
     gitops.jenkins-x.io/pipeline: 'namespaces'
   annotations:
-    eks.amazonaws.com/role-arn: arn:aws:iam::cluster-nov-17:role/cluster-nov-17-tekton-bot
+    eks.amazonaws.com/role-arn: arn:aws:iam::315903692558:role/cluster-nov-17-tekton-bot
     meta.helm.sh/release-name: 'tekton-pipeline'
 secrets:
