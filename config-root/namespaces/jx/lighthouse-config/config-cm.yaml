@@ -41,7 +41,7 @@ data:
         - needs-rebase
         repos:
         - olegy-ait/jx3-eks-asm
-      target_url: http://lighthouse-jx./merge/status
+      target_url: http://lighthouse-jx.34.234.159.240.nip.io/merge/status
 kind: ConfigMap
 metadata:
   creationTimestamp: null
