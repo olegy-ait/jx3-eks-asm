@@ -1,0 +1,20 @@
+# Source: countryinfo-web/templates/service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: countryinfo-web
+  labels:
+    chart: "countryinfo-web-0.0.4"
+    gitops.jenkins-x.io/pipeline: 'namespaces'
+  annotations:
+    meta.helm.sh/release-name: 'countryinfo-web'
+  namespace: jx-staging
+spec:
+  type: ClusterIP
+  ports:
+    - port: 80
+      targetPort: 80
+      protocol: TCP
+      name: http
+  selector:
+    app: countryinfo-web-countryinfo-web

@@ -1,0 +1,10 @@
+# Source: countryinfo-web/templates/sa.yaml
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: countryinfo-web-countryinfo-web
+  annotations:
+    meta.helm.sh/release-name: 'countryinfo-web'
+  namespace: jx-staging
+  labels:
+    gitops.jenkins-x.io/pipeline: 'namespaces'
